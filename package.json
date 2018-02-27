@@ -1,0 +1,27 @@
+{
+  "name": "crookedgrin",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.0.17",
+    "react-tilt": "^0.1.4",
+    "typeface-martel": "^0.0.44",
+    "vanilla-tilt": "^1.4.1"
+  },
+  "scripts": {
+    "start": "npm run build-css && run-p -ncr watch-css start-js",
+    "start-js": "react-scripts start",
+    "build": "run-s -n build-css build-js",
+    "build-js": "react-scripts build",
+    "test": "run-s -n build-css test-js",
+    "test-js": "react-scripts test --env=jsdom",
+    "build-css": "node-less-chokidar src",
+    "watch-css": "node-less-chokidar src --watch"
+  },
+  "devDependencies": {
+    "node-less-chokidar": "^0.1.0",
+    "npm-run-all": "^4.0.2"
+  }
+}

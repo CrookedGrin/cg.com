@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
+*,
+html,
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Julius Sans One';
+}
+.App {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pinned {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) skew(0, -12deg);
+  color: #ffffff;
+  background: linear-gradient(135deg, #F7C4B7 0%, #DDA1B1 33%, #8fd8d2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 60px;
+  white-space: nowrap;
+  cursor: default;
+  overflow: initial;
+}
+.pinned::after,
+.pinned::before {
+  content: '';
+  width: 0%;
+  height: 1px;
+  position: absolute;
+  background: linear-gradient(135deg, #F7C4B7 0%, #DDA1B1 33%, #8fd8d2 100%);
+  transition: all 0.5s;
+}
+.pinned::before {
+  left: 0;
+  bottom: -5px;
+}
+.pinned::after {
+  top: -5px;
+  right: 0;
+}
+.pinned:hover::after,
+.pinned:hover::before {
+  width: 100%;
+}
+.pinned.top {
+  top: 13vh;
+}
+.pinned.bottom {
+  bottom: 13vh;
+  font-size: 55px;
+}
