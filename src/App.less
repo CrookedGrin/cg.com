@@ -1,35 +1,62 @@
-@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Bellefair');
 @import '_variables';
 
 *, html, body {
-    margin: 0;
-    overflow: hidden;
-    font-family: 'Julius Sans One';
+  margin: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-family: 'Bellefair';
 }
 
+p {
+  font-size: 22px;
+  line-height: 1.5em;
+  max-width: 500px;
+}
+
+a {
+  color: @mint;
+  display: inline-block;
+  position: relative;
+  overflow: initial;
+  text-decoration: none;
+}
+  
 .App {
   text-align: center;
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  overflow: initial;
 }
-
-.pinned {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) skew(0,-@skew-y);
+  
+.title {
+    font-family: 'Julius Sans One';
+  position: relative;
+  // right: 0;
+  // transform: translateX(-50%);
   color: lighten(@bg-color, 20%);
   background: @bg-gradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 60px;
   white-space: nowrap;
+  margin-bottom: 2rem;
   // text-shadow: 2px 4px 10px rgba(0,0,0,0.05);
   cursor: default;
   overflow: initial;
-  
+  &::before {
+    bottom: -5px;
+  }
+  &::after {
+    top: -5px;
+  }
+}
+
+a, .title {
   &::after, &::before {
     content: '';
     width: 0%;
@@ -41,26 +68,52 @@
   
   &::before {
     left: 0;
-    bottom: -5px;
+    bottom: 2px;
   }
   &::after {
-    top: -5px;
+    top: 2px;
     right: 0;
   }
-
 
   &:hover {
     &::after, &::before {
       width: 100%;
     }
   }
+}
 
-  &.top {
-    top: 13vh;
+.content-wrapper {
+  position: relative;
+  flex-basis: 50%;
+  height: 100%;
+  min-width: 600px;
+  overflow: hidden;
+  
+  @media (max-width: 1200px) {
+    flex-basis: 100%;
+    max-height: 50%;
+    transform: none;
   }
-  &.bottom {
-    bottom: 13vh;
-    font-size: 55px;
-  }
+}
 
+.content-wrapper-2 {
+  flex-grow: 1;
+  background: @choco;
+  transform: skewX(7.5deg);
+  margin: 0 -10% 0 -5%;
+  padding-right: 10%;
+  
+  @media (max-width: 1200px) {
+    padding-right: 0;
+  }
+}
+
+.content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  transform: skewX(-7.5deg);
+  height: 100%;
+  color: @milk;
 }

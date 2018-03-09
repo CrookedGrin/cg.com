@@ -2,8 +2,8 @@
   display: block;
   width: 100%;
   height: 100%;
-  left: -10vw;
-  top: -10vh;
+  left: -10%;
+  top: -10%;
   transform-style: preserve-3d;
   transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
   will-change: transform;
@@ -15,13 +15,10 @@
 }
 .tilt-child {
   background-image: linear-gradient(135deg, #F7C4B7 0%, #DDA1B1 33%, #8fd8d2 100%);
-  border-radius: 30% 3% 30% 3% / 130% 4%;
   transform-style: preserve-3d;
   overflow: initial;
   position: absolute;
-  width: 70%;
-  min-width: 500px;
-  max-width: 600px;
+  width: 120%;
   height: 50%;
   min-height: 200px;
   max-height: 400px;
@@ -38,7 +35,7 @@
   fill: #e8e5e3;
   left: 50%;
   top: 50%;
-  width: 100%;
-  height: 100%;
+  width: 102%;
+  height: 102%;
   transform: translateZ(50px) translateX(-50%) translateY(-50%) skew(-10deg, 12deg);
 }

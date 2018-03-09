@@ -6284,10 +6284,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typeface-martel@^0.0.44:
-  version "0.0.44"
-  resolved "https://registry.yarnpkg.com/typeface-martel/-/typeface-martel-0.0.44.tgz#2b1eefc99d8290eba8826bed9b8c59fa59c47214"
-
 ua-parser-js@^0.7.9:
   version "0.7.17"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.17.tgz#e9ec5f9498b9ec910e7ae3ac626a805c4d09ecac"

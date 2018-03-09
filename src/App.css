@@ -1,34 +1,57 @@
-@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Bellefair');
 *,
 html,
 body {
   margin: 0;
-  overflow: hidden;
-  font-family: 'Julius Sans One';
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-family: 'Bellefair';
+}
+p {
+  font-size: 22px;
+  line-height: 1.5em;
+  max-width: 500px;
+}
+a {
+  color: #8fd8d2;
+  display: inline-block;
+  position: relative;
+  overflow: initial;
+  text-decoration: none;
 }
 .App {
   text-align: center;
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  overflow: initial;
 }
-.pinned {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) skew(0, -12deg);
+.title {
+  font-family: 'Julius Sans One';
+  position: relative;
   color: #ffffff;
   background: linear-gradient(135deg, #F7C4B7 0%, #DDA1B1 33%, #8fd8d2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 60px;
   white-space: nowrap;
+  margin-bottom: 2rem;
   cursor: default;
   overflow: initial;
 }
-.pinned::after,
-.pinned::before {
+.title::before {
+  bottom: -5px;
+}
+.title::after {
+  top: -5px;
+}
+a::after,
+.title::after,
+a::before,
+.title::before {
   content: '';
   width: 0%;
   height: 1px;
@@ -36,22 +59,54 @@ body {
   background: linear-gradient(135deg, #F7C4B7 0%, #DDA1B1 33%, #8fd8d2 100%);
   transition: all 0.5s;
 }
-.pinned::before {
+a::before,
+.title::before {
   left: 0;
-  bottom: -5px;
+  bottom: 2px;
 }
-.pinned::after {
-  top: -5px;
+a::after,
+.title::after {
+  top: 2px;
   right: 0;
 }
-.pinned:hover::after,
-.pinned:hover::before {
+a:hover::after,
+.title:hover::after,
+a:hover::before,
+.title:hover::before {
   width: 100%;
 }
-.pinned.top {
-  top: 13vh;
+.content-wrapper {
+  position: relative;
+  flex-basis: 50%;
+  height: 100%;
+  min-width: 600px;
+  overflow: hidden;
 }
-.pinned.bottom {
-  bottom: 13vh;
-  font-size: 55px;
+@media (max-width: 1200px) {
+  .content-wrapper {
+    flex-basis: 100%;
+    max-height: 50%;
+    transform: none;
+  }
+}
+.content-wrapper-2 {
+  flex-grow: 1;
+  background: #39322d;
+  transform: skewX(7.5deg);
+  margin: 0 -10% 0 -5%;
+  padding-right: 10%;
+}
+@media (max-width: 1200px) {
+  .content-wrapper-2 {
+    padding-right: 0;
+  }
+}
+.content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  transform: skewX(-7.5deg);
+  height: 100%;
+  color: #e8e5e3;
 }
